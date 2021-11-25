@@ -1,0 +1,80 @@
+#include <iostream>
+
+using namespace std;
+
+
+
+int lnko(int a , int b){
+while(a!=b){
+    if(a>b){
+        a=a-b;
+    }else{
+    b=b-a;
+    }
+}
+return a;
+}
+
+bool prim (int a){
+for(int oszto=2;oszto<a/2+1;oszto++){
+    if(a%oszto==0){
+        return false;
+    }
+}
+return true;
+}
+
+
+bool pallindrom (int a) {
+int d=0;
+int b=a;
+while(b>a)
+    {
+        int c=b%10;
+        b=b/10;
+        d=d*10+c;
+    }
+    if(a==d)
+    {
+        return true;
+    }else{
+    return false;
+    }
+}
+
+int main()
+{
+    int a,b,c;
+    cout <<"c=";
+    cin>>c;
+    if (c==1)
+    {
+        int a;
+        cout<<"a=";
+        cin>>a;
+        if(prim(a)==1)
+            cout << "szam prim";
+    }
+
+    if (c==2)
+    {
+      int a;
+      cout<<"a=";
+    cin >> a;
+    if (pallindrom(a)) {
+    cout << "pallindrom\n" << endl;
+    } else {
+    cout << "nem pallindrom\n"<< endl;
+}
+    }
+
+    if(c=3)
+    {
+    cout << "a=";
+    cin >> a;
+    cout << "b=";
+    cin >> b;
+    cout <<lnko(a,b);
+    }
+    return 0;
+}
